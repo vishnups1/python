@@ -141,12 +141,70 @@ def main():
     # Concatenation
     ###############
 
-    a1 = np.array([[1, 2], [3, 4]])
-    a2 = np.array([[1, 2], [1, 1]])
+    # a1 = np.array([[1, 2], [3, 4]])
+    # a2 = np.array([[1, 2], [1, 1]])
 
-    print(np.concat((a1, a2), axis=0))
-    print(np.concat((a1, a2), axis=1))
+    # print(np.concat((a1, a2), axis=0))
+    # print(np.concat((a1, a2), axis=1))
 
+    ###################
+    # Reshaping Arrays
+    ###################
+
+    """
+    order="F" => Vertical
+    order="C" => Horizontal
+
+      axis=1 → move across columns
+      [1 2 3]
+      [4 5 6]
+      axis=0
+      ↓ 
+      move down rows 
+    """
+
+    # a = np.array(
+    #   [
+    #     [4, 3, 2, 1],
+    #     [1, 2, 3, 4]
+    #   ]
+    # )
+    # print(np.reshape(a, (4,2)))
+    # print(np.reshape(a, (4,2), order="F"))
+    # print(np.reshape(a, (4,2), order="C"))
+
+    #########################
+    # Add new Axis to arrays
+    #########################
+
+    """
+    np.newaxis
+    np.expand_dims
+    """
+
+    # a = np.arange(1, 7)
+    # print(a)                  # [1 2 3 4 5 6]
+    # print(a.ndim)             # 1
+
+    # a1=a[np.newaxis, :]
+    # print(a1)                 # [[1 2 3 4 5 6]]
+    # print(a1.ndim)            # 2
+
+    # z=a1[np.newaxis, :]
+    # print(z)                  # [[[1 2 3 4 5 6]]]
+    # print(z.ndim)             # 3
+
+    # a2=a[:, np.newaxis]
+    # print(a2)                 # 2
+    # """
+    # [[1]
+    #  [2]
+    #  [3]
+    #  [4]
+    #  [5]
+    #  [6]]
+    # """
+    # print(a2.ndim)
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,4 @@
+from matplotlib import axes
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -182,10 +183,14 @@ def main():
     np.expand_dims
     """
 
-    # a = np.arange(1, 7)
-    # print(a)                  # [1 2 3 4 5 6]
-    # print(a.ndim)             # 1
+    a1 = np.arange(1, 6)
+    print(a1)                  # [1 2 3 4 5]
+    print(a1.shape)            # (9,)
 
+    a2 = a1[np.newaxis, :]     # [[1 2 3 4 5]]
+    print(a2)                  # (1, 9)
+    print(a2.shape)
+ 
     # a1=a[np.newaxis, :]
     # print(a1)                 # [[1 2 3 4 5 6]]
     # print(a1.ndim)            # 2
@@ -205,6 +210,15 @@ def main():
     #  [6]]
     # """
     # print(a2.ndim)
+
+    #########
+    # argmin
+    #########
+
+    # a = np.array([[5, 1, 8], [2, 4, 7]])
+    # print(np.argmin(a))         # This flattens to 1D array [5, 1, 8, 2, 4, 7] and send the index 1 which is the minimum
+    # print(np.argmin(a, axis=0)) # Compare column wise # [1, 0, 1]
+    # print(np.argmin(a, axis=1)) # Compare row wise # [1 0]
 
 if __name__ == "__main__":
     main()
